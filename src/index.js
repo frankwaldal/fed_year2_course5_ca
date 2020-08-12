@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+import './styles/indexStyles.scss';
+
+import MainSite from './Site/MainSite';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MainSite />
   </React.StrictMode>,
   document.getElementById('root')
 );
