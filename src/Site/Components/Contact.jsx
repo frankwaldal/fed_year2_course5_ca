@@ -4,7 +4,7 @@ import { useMutation } from 'react-query';
 import ReCAPTCHA from "react-google-recaptcha";
 
 import { checkRecaptcha, sendEmail } from '../utils/apiCalls';
-import { recaptchaSecret } from '../Constants/apikey';
+import { recaptchaSecret, recaptchaSitekey } from '../Constants/apikey';
 
 export default function Contact({ toggleContactFormOpen }) {
   const initialFormValues = {
@@ -101,7 +101,7 @@ export default function Contact({ toggleContactFormOpen }) {
             </div>
             <ReCAPTCHA
               onChange={createRecaptchaBody}
-              sitekey='6LdZLL0ZAAAAAMtD6ptXxR3RpT2AP1_oFWLxXO1Q'
+              sitekey={recaptchaSitekey}
               theme='dark'
               />
             <div>
