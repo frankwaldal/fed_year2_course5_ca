@@ -5,6 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 import { checkRecaptcha, sendEmail } from '../utils/apiCalls';
 import { recaptchaSecret, recaptchaSitekey } from '../Constants/apikey';
+import { emailRegex, stringRegex } from '../Constants/regexConstants';
 
 export default function Contact({ toggleContactFormOpen }) {
   const initialFormValues = {
@@ -12,8 +13,6 @@ export default function Contact({ toggleContactFormOpen }) {
     email: '',
     message: ''
   }
-  const emailCheck = /^[a-z0-9.\-_+!#$%&'*/=?^`{}~|]+@([a-z0-9-]+\.)+[a-z]{2,4}$/i;
-  const formCheck = /[A-Za-z0-9\- .]+/;
 
   const [submitButton, setSubmitButton] = useState('');
   const [token, setToken] = useState('');
@@ -70,7 +69,7 @@ export default function Contact({ toggleContactFormOpen }) {
             <div>
               <label htmlFor='name'>Name: </label>
               <input
-                className={values.name === '' ? 'emptyInput' : formCheck.test(values.name) ? 'successInput' : 'errorInput'}
+                className={values.name === '' ? 'emptyInput' : stringRegex.test(values.name) ? 'successInput' : 'errorInput'}
                 type="text"
                 id='name'
                 onChange={field => setFieldValue(field.target.id, field.target.value)}
@@ -81,7 +80,7 @@ export default function Contact({ toggleContactFormOpen }) {
             <div>
               <label htmlFor='email'>Email address: </label>
               <input
-                className={values.email === '' ? 'emptyInput' : emailCheck.test(values.email) ? 'successInput' : 'errorInput'}
+                className={values.email === '' ? 'emptyInput' : emailRegex.test(values.email) ? 'successInput' : 'errorInput'}
                 type="email"
                 id='email'
                 onChange={field => setFieldValue(field.target.id, field.target.value)}
@@ -92,7 +91,7 @@ export default function Contact({ toggleContactFormOpen }) {
             <div>
               <label htmlFor='message'>Your message: </label>
               <textarea
-                className={values.message === '' ? 'emptyInput' : formCheck.test(values.message) ? 'successInput' : 'errorInput'}
+                className={values.message === '' ? 'emptyInput' : stringRegex.test(values.message) ? 'successInput' : 'errorInput'}
                 id='message'
                 onChange={field => setFieldValue(field.target.id, field.target.value)}
                 placeholder='Your message...'
