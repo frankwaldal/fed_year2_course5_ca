@@ -1,6 +1,6 @@
 import base64 from 'base-64';
 
-import { apikey } from '../Constants/apikey';
+import { apikey } from '../Constants/apikeys';
 
 export async function sendEmail(body) {
     return (await fetch(`http://bronto.freeddns.org:3001/api/sendEmail`, {

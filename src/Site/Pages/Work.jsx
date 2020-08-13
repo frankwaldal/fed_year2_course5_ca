@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { previewData } from '../Constants/previewData';
+
 export default function Work() {
   return (
     <main>

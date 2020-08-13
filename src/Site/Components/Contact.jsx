@@ -4,7 +4,7 @@ import { useMutation } from 'react-query';
 import ReCAPTCHA from "react-google-recaptcha";
 
 import { checkRecaptcha, sendEmail } from '../utils/apiCalls';
-import { recaptchaSecret, recaptchaSitekey } from '../Constants/apikey';
+import { recaptchaSecret, recaptchaSitekey } from '../Constants/apikeys';
 import { emailRegex, stringRegex } from '../Constants/regexConstants';
 
 export default function Contact({ toggleContactFormOpen }) {
