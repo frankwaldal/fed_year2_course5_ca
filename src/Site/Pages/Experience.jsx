@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function FrontPage() {
+export default function Experience() {
   return (
     <main>
-      <h1>Front Page</h1>
+      <h1>Experience</h1>
     </main>
   )
 }

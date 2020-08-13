@@ -1,16 +1,3 @@
-.emptyInput {
-  border: none;
-}
-
-.successInput {
-  border: 2px solid green;
-}
-
-.errorInput {
-  border: 2px solid red;
-}
-
-.contactForm {
-  display: flex;
-  flex-direction: column;
-}
+@import 'partials/components/contact';
+@import 'partials/components/footer';
+@import 'partials/components/header';

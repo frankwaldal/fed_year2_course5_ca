@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Formik, Form } from 'formik';
 import { useMutation } from 'react-query';
 import ReCAPTCHA from "react-google-recaptcha";
@@ -31,11 +31,12 @@ export default function Contact({ toggleContactFormOpen }) {
     setToken(token);
   }
 
+  const [activeTimer, setActiveTimer] = useState(false);
   const [sendEmailMutation, sendEmailMutationStatus] = useMutation(sendEmail, {
     onSettled: data => {
       console.log(data);
       if (data.status === 200) {
-        toggleContactFormOpen();
+        setActiveTimer(true);
       }
     }
   });
@@ -43,6 +44,11 @@ export default function Contact({ toggleContactFormOpen }) {
     const body = {...values, token: token};
     sendEmailMutation(body);
   }
+  useEffect(() => {
+    if (activeTimer === false) return;
+    const timer = setTimeout(toggleContactFormOpen, 1500);
+    return () => clearTimeout(timer);
+  }, [activeTimer, toggleContactFormOpen]);
 
   return (
     <div className='contactOverlay'>

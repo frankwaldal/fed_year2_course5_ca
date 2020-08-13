@@ -1,0 +1,19 @@
+.contactOverlay {
+  position: fixed;
+  bottom: 40px;
+  left: 20px;
+  border: 1px solid black;
+  & .contactForm {
+    display: flex;
+    flex-direction: column;
+    & .emptyInput {
+      border: none;
+    }
+    & .successInput {
+      border: 2px solid green;
+    }
+    & .errorInput {
+      border: 2px solid red;
+    }
+  }
+}
