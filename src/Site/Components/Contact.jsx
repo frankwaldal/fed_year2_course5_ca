@@ -52,6 +52,9 @@ export default function Contact({ toggleContactFormOpen }) {
 
   return (
     <div className='contactOverlay'>
+      <div className='closeButtonWrapper'>
+        <button onClick={toggleContactFormOpen}>X</button>
+      </div>
       <Formik
         initialValues={initialFormValues}
         setFieldValue

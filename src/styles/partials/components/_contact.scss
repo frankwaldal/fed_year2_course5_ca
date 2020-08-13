@@ -2,10 +2,42 @@
   position: fixed;
   bottom: 40px;
   left: 20px;
+  width: 400px;
+  height: 500px;
+  padding: 10px;
   border: 1px solid black;
+  & .closeButtonWrapper button {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    height: 2em;
+    line-height: 2em;
+    border-radius: 50%;
+    cursor: pointer;
+  }
   & .contactForm {
     display: flex;
     flex-direction: column;
+    & div {
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+      & textarea {
+        resize: none;
+        height: 10em;
+        width: 60%;
+      }
+      & input {
+        height: 2em;
+        width: 60%;
+      }
+      & button {
+        margin-left: auto;
+        height: 2em;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
     & .emptyInput {
       border: none;
     }
