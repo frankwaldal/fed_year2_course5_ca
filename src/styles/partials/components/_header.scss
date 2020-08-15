@@ -1,11 +1,86 @@
 header {
+  position: fixed;
+  background: $darkBlue;
+  top: 0;
+  width: 100vw;
+  border-bottom: 3px solid $lightYellow;
   display: flex;
   justify-content: space-between;
-  & nav ul {
+  & h1 {
+    font-family: $headerFont;
+    font-size: 5em;
+    margin: 10px 20px;
+  }
+  & nav {
     display: flex;
-    & li {
-      list-style: none;
-      margin: 10px;
+    align-items: flex-end;
+    margin-right: 10px;
+    & ul {
+      display: flex;
+      align-items: flex-end;
+      & .menuDivider {
+        align-self: center;
+        height: 30px;
+        width: 3px;
+        background: $lightYellow;
+      }
+      & li {
+        list-style: none;
+        margin: 10px;
+        & a {
+          text-decoration: none;
+          color: $lightYellow;
+          font-size: 1.4em;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  & .mobileButton {
+    display: none;
+  }
+}
+
+@media #{$tabletBreakpoint} {
+  header {
+    align-items: flex-end;
+    & h1 {
+      font-size: 4em;
+    }
+    & .mobileClosed {
+      display: none;
+    }
+    & .mobileOpen {
+      margin: 0;
+      display: flex;
+      position: fixed;
+      top: 100px;
+      left: 0;
+      width: 100vw;
+      background: $darkBlue;
+      & ul {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        & .menuDivider {
+          display: none;
+        }
+      }
+    }
+    & .mobileButton {
+      margin: 20px;
+      width: 40px;
+      height: 39px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      & span {
+        background: $lightYellow;
+        width: 40px;
+        height: 3px;
+      }
     }
   }
 }

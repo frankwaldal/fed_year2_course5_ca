@@ -2,12 +2,17 @@ footer {
   display: flex;
   justify-content: space-around;
   position: fixed;
+  background: $darkBlue;
   bottom: 0;
   width: 100%;
   & p {
     cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
     & a {
       text-decoration: none;
+      color: $lightYellow;
     }
   }
 }

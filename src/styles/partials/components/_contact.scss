@@ -1,11 +1,13 @@
 .contactOverlay {
   position: fixed;
-  bottom: 40px;
+  background: $darkBlue;
+  bottom: 60px;
   left: 20px;
   width: 400px;
   height: 500px;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid $lightYellow;
+  box-shadow: 2px 2px 15px $lightYellow;
   & .closeButtonWrapper button {
     margin-left: auto;
     display: flex;
@@ -47,5 +49,11 @@
     & .errorInput {
       border: 2px solid red;
     }
+  }
+}
+
+@media #{$mobileBreakpoint} {
+  .contactOverlay {
+    width: 350px;
   }
 }

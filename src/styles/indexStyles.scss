@@ -1,3 +1,33 @@
+@import 'partials/constants/variables';
 @import 'partials/components/contact';
 @import 'partials/components/footer';
 @import 'partials/components/header';
+
+html {
+  // source: https://3djungle.net/textures/sky/5926/
+  background: url(../Assets/skySeamlessTexture.jpg);
+  background-repeat: repeat;
+}
+body {
+  min-height: calc(100vh - 100px);
+  margin: 0;
+  padding: 0;
+  background: $darkBlue;
+  color: $lightYellow;
+  opacity: 0.95;
+  font-family: $bodyFont;
+  & main {
+    margin-bottom: 50px;
+    margin-top: 100px;
+    padding-top: 20px;
+  }
+}
+
+@media #{$tabletBreakpoint} {
+  body {
+    min-height: calc(100vh - 80px);
+    & main {
+      margin-top: 80px;
+    }
+  }
+}
