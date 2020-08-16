@@ -3,7 +3,7 @@ import base64 from 'base-64';
 import { apikey } from '../Constants/apikeys';
 
 export async function sendEmail(body) {
-    return (await fetch(`http://bronto.freeddns.org:3001/api/sendEmail`, {
+    return (await fetch(`https://cors-anywhere.herokuapp.com/http://bronto.freeddns.org:3001/api/sendEmail`, {
         method: 'post',
         headers: {
             "Content-Type": "application/json",
