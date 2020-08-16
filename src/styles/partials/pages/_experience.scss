@@ -1,0 +1,28 @@
+.experience {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
+  & .experienceColumn {
+    padding: 10px;
+    border: 1px solid $lightYellow;
+    & .experienceRow {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 0.5em;
+      & .experienceHeader {
+        font-size: 1.1em;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+  & .infoText {
+    padding: 10px;
+  }
+}
+
+@media #{$tabletBreakpoint} {
+  .experience {
+    grid-template-columns: 100%;
+  }
+}

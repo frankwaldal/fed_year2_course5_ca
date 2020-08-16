@@ -4,10 +4,10 @@
   bottom: 60px;
   left: 20px;
   width: 400px;
-  height: 500px;
-  padding: 10px;
   border: 1px solid $lightYellow;
   box-shadow: 2px 2px 15px $lightYellow;
+  overflow: hidden;
+  transition: height 0.5s, padding 0.4s 0.1s;
   & .closeButtonWrapper button {
     margin-left: auto;
     display: flex;
@@ -35,9 +35,13 @@
       }
       & button {
         margin-left: auto;
+        font-size: 1.4em;
         height: 2em;
-        border-radius: 5px;
+        padding: 0 20px;
+        border-radius: 10px;
         cursor: pointer;
+        background: $green;
+        color: $darkBlue;
       }
     }
     & .emptyInput {

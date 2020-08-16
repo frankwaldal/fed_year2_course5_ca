@@ -14,5 +14,9 @@ footer {
       text-decoration: none;
       color: $lightYellow;
     }
+    & img {
+      height: 1em;
+      margin-right: 5px;
+    }
   }
 }

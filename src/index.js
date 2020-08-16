@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faChevronRight, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons'
 
 import './styles/indexStyles.scss';
 
 import MainSite from './Site/MainSite';
+
+library.add(faChevronRight, faEnvelopeOpen);
 
 ReactDOM.render(
   <React.StrictMode>

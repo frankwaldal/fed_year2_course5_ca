@@ -56,10 +56,13 @@ header {
       margin: 0;
       display: flex;
       position: fixed;
+      padding-bottom: 10px;
       top: 100px;
       left: 0;
       width: 100vw;
       background: $darkBlue;
+      border-bottom: 1px solid $lightYellow;
+      box-shadow: 2px 2px 15px $lightYellow;
       & ul {
         flex-direction: column;
         align-items: center;

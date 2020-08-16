@@ -14,6 +14,9 @@ export default function Contact({ toggleContactFormOpen }) {
     message: ''
   }
 
+  const [formHeight, setFormHeight] = useState(0);
+  const [formPadding, setFormPadding] = useState(0);
+
   const [submitButton, setSubmitButton] = useState('');
   const [token, setToken] = useState('');
   const [checkRecaptchaMutation] = useMutation(checkRecaptcha, {
@@ -50,8 +53,20 @@ export default function Contact({ toggleContactFormOpen }) {
     return () => clearTimeout(timer);
   }, [activeTimer, toggleContactFormOpen]);
 
+  useEffect(() => {
+    setFormHeight(500);
+    setFormPadding(10);
+    return () => {
+      setFormHeight(0);
+      setFormPadding(0);
+    }
+  }, []);
+
   return (
-    <div className='contactOverlay'>
+    <div className='contactOverlay' style={{
+        height: `${formHeight}px`,
+        padding: `${formPadding}px`
+      }}>
       <div className='closeButtonWrapper'>
         <button onClick={toggleContactFormOpen}>X</button>
       </div>
