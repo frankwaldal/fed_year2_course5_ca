@@ -1,6 +1,6 @@
 .projectGrid {
   display: grid;
-  grid-template-columns: calc(50% - 20px) calc(50% - 20px);
+  grid-template-columns: calc(50% - 10px) calc(50% - 10px);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   & .project {

@@ -64,6 +64,9 @@ export default function Experience() {
         <p>Further I have some experience with nodejs backends, amongst other things, setting up a MongoDB - nodejs - Rest API.</p>
         <p>I have done some work with Electron, but are still inexperienced on that subject.</p>
       </div>
+      <div className='infoText'>
+        <p>In the future I am looking at expanding into backend languages like Java, Kotlin, or others. As well as other languages like possibly C#.</p>
+      </div>
     </main>
   )
 }
